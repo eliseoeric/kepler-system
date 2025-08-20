@@ -8,6 +8,7 @@
     "lint": "turbo run lint",
     "lint:fix": "turbo run lint -- --fix",
     "format": "prettier --write \"**/*.{json,md,yml,yaml}\"",
+    "format:check": "prettier --check \"**/*.{json,md,yml,yaml}\"",
     "check-types": "turbo run check-types",
     "prepare": "husky"
   },
@@ -27,7 +28,7 @@
   "lint-staged": {
     "*.{json,md,yml,yaml}": "prettier --write"
   },
-  "packageManager": "pnpm@9.15.0",
+  "packageManager": "pnpm@8.15.6",
   "dependencies": {
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
