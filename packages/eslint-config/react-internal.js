@@ -22,6 +22,13 @@ export const config = [
       globals: {
         ...globals.serviceworker,
         ...globals.browser,
+        ...globals.node,
+      },
+    },
+    settings: {
+      react: { version: "detect" },
+      "import/resolver": {
+        typescript: {},
       },
     },
   },
@@ -34,6 +41,45 @@ export const config = [
       ...pluginReactHooks.configs.recommended.rules,
       // React scope no longer necessary with new JSX transform.
       "react/react-in-jsx-scope": "off",
+      "react/jsx-uses-react": "off",
+      
+      // React component and JSX rules
+      "react/jsx-filename-extension": [
+        1,
+        {
+          "extensions": [".tsx"],
+        },
+      ],
+      "react/function-component-definition": [
+        2,
+        {
+          "namedComponents": "arrow-function",
+          "unnamedComponents": "arrow-function",
+        },
+      ],
+      "react/jsx-closing-bracket-location": [1, "line-aligned"],
+      "react/jsx-props-no-spreading": "off",
+      "react/require-default-props": "off",
+      "react/prop-types": "off",
+      "react/no-unused-prop-types": "off",
+
+      // Accessibility rules
+      "jsx-a11y/label-has-associated-control": [
+        2,
+        {
+          "labelAttributes": ["label"],
+          "controlComponents": ["Input"],
+          "depth": 3,
+        },
+      ],
+    },
+  },
+  // Test file overrides
+  {
+    files: ["src/**/*.test.ts", "src/**/*.test.tsx"],
+    rules: {
+      "jsx-a11y/alt-text": "off",
+      "import/no-extraneous-dependencies": "off",
     },
   },
 ];

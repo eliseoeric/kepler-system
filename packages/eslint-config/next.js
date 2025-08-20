@@ -5,6 +5,7 @@ import pluginReactHooks from "eslint-plugin-react-hooks";
 import pluginReact from "eslint-plugin-react";
 import globals from "globals";
 import pluginNext from "@next/eslint-plugin-next";
+import tanstackQuery from "@tanstack/eslint-plugin-query";
 import { config as baseConfig } from "./base.js";
 
 /**
@@ -23,16 +24,25 @@ export const nextJsConfig = [
       ...pluginReact.configs.flat.recommended.languageOptions,
       globals: {
         ...globals.serviceworker,
+        ...globals.browser,
+        ...globals.node,
+      },
+    },
+    settings: {
+      "import/resolver": {
+        typescript: {},
       },
     },
   },
   {
     plugins: {
       "@next/next": pluginNext,
+      "@tanstack/query": tanstackQuery,
     },
     rules: {
       ...pluginNext.configs.recommended.rules,
       ...pluginNext.configs["core-web-vitals"].rules,
+      ...tanstackQuery.configs.recommended.rules,
     },
   },
   {
@@ -44,6 +54,59 @@ export const nextJsConfig = [
       ...pluginReactHooks.configs.recommended.rules,
       // React scope no longer necessary with new JSX transform.
       "react/react-in-jsx-scope": "off",
+      "react/jsx-uses-react": "off",
+      
+      // React component and JSX rules
+      "react/jsx-filename-extension": [
+        1,
+        {
+          "extensions": [".tsx"],
+        },
+      ],
+      "react/function-component-definition": [
+        2,
+        {
+          "namedComponents": "arrow-function",
+          "unnamedComponents": "arrow-function",
+        },
+      ],
+      "react/jsx-closing-bracket-location": [1, "line-aligned"],
+      "react/jsx-props-no-spreading": "off",
+      "react/require-default-props": "off",
+      "react/prop-types": "off",
+      "react/no-unused-prop-types": "off",
+
+      // Accessibility rules
+      "jsx-a11y/label-has-associated-control": [
+        2,
+        {
+          "labelAttributes": ["label"],
+          "controlComponents": ["Input"],
+          "depth": 3,
+        },
+      ],
+    },
+  },
+  // Storybook-specific overrides
+  {
+    files: [
+      "*storybook/**/*.ts",
+      "*storybook/**/*.tsx",
+      "**/*.stories.tsx",
+      "**/*.stories.ts",
+    ],
+    rules: {
+      "import/no-extraneous-dependencies": "off",
+      "no-alert": "off",
+    },
+  },
+  // Test file overrides
+  {
+    files: ["src/**/*.test.ts", "src/**/*.test.tsx"],
+    rules: {
+      "@next/next/no-img-element": "off",
+      "jsx-a11y/alt-text": "off",
+      "import/no-extraneous-dependencies": "off",
     },
   },
 ];
