@@ -4,6 +4,7 @@ import turboPlugin from "eslint-plugin-turbo";
 import tseslint from "typescript-eslint";
 import onlyWarn from "eslint-plugin-only-warn";
 import importHelpersPlugin from "eslint-plugin-import-helpers";
+import importPlugin from "eslint-plugin-import";
 
 /**
  * A shared ESLint configuration for the repository.
@@ -18,6 +19,7 @@ export const config = [
     plugins: {
       turbo: turboPlugin,
       "import-helpers": importHelpersPlugin,
+      import: importPlugin,
     },
     rules: {
       "turbo/no-undeclared-env-vars": "warn",
