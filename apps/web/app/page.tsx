@@ -1,13 +1,13 @@
-import Image, { type ImageProps } from "next/image";
 import { Button } from "@repo/ui/button";
+import Image, { type ImageProps } from "next/image";
 import styles from "./page.module.css";
 
-type Props = Omit<ImageProps, "src"> & {
+type PropsType = Omit<ImageProps, "src"> & {
   srcLight: string;
   srcDark: string;
 };
 
-const ThemeImage = (props: Props) => {
+const ThemeImage = (props: PropsType) => {
   const { srcLight, srcDark, ...rest } = props;
 
   return (
@@ -18,7 +18,7 @@ const ThemeImage = (props: Props) => {
   );
 };
 
-export default function Home() {
+const Home = () => {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
@@ -99,4 +99,6 @@ export default function Home() {
       </footer>
     </div>
   );
-}
+};
+
+export default Home;

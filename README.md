@@ -48,7 +48,7 @@ yarn dlx turbo build
 pnpm exec turbo build
 ```
 
-You can build a specific package by using a [filter](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters):
+You can build a specific package by using a [filter](https://turborepo.com/docs/crafting-repository/running-tasks#using-filters):
 
 ```
 # With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
@@ -76,7 +76,7 @@ yarn exec turbo dev
 pnpm exec turbo dev
 ```
 
-You can develop a specific package by using a [filter](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters):
+You can develop a specific package by using a [filter](https://turborepo.com/docs/crafting-repository/running-tasks#using-filters):
 
 ```
 # With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
@@ -127,9 +127,9 @@ pnpm exec turbo link
 
 Learn more about the power of Turborepo:
 
-- [Tasks](https://turborepo.com/docs/crafting-your-repository/running-tasks)
-- [Caching](https://turborepo.com/docs/crafting-your-repository/caching)
+- [Tasks](https://turborepo.com/docs/crafting-repository/running-tasks)
+- [Caching](https://turborepo.com/docs/crafting-repository/caching)
 - [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching)
-- [Filtering](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters)
+- [Filtering](https://turborepo.com/docs/crafting-repository/running-tasks#using-filters)
 - [Configuration Options](https://turborepo.com/docs/reference/configuration)
 - [CLI Usage](https://turborepo.com/docs/reference/command-line-reference)
