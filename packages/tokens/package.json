@@ -1,0 +1,24 @@
+{
+  "name": "@repo/tokens",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "default": "./dist/json/tokens.json"
+    }
+  },
+  "style": "dist/css/tokens.css",
+  "scripts": {
+    "build": "pnpm run clean && style-dictionary build --config sd.config.js && style-dictionary build --config sd.config.atlas.js && style-dictionary build --config sd.config.nordfox.js",
+    "clean": "rimraf dist"
+  },
+  "devDependencies": {
+    "style-dictionary": "^4.0.0",
+    "tinycolor2": "^1.6.0",
+    "rimraf": "^6.0.1"
+  },
+  "publishConfig": {
+    "access": "restricted"
+  }
+}
