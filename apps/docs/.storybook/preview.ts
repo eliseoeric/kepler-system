@@ -1,27 +1,35 @@
 import type { Preview } from '@storybook/react-vite';
 import '../styles.css';
-import '@repo/tokens/dist/css/tokens.css';
-import '@repo/tokens/dist/css/theme-atlas.css';
-import '@repo/tokens/dist/css/theme-nordfox.css';
-
-export const globalTypes = {
-  brand: {
-    name: 'Brand',
-    toolbar: { items: ['atlas', 'nordfox'], dynamicTitle: true },
-  },
-};
-
-export const decorators = [
-  (Story, ctx) => {
-    document.documentElement.setAttribute(
-      'data-brand',
-      ctx.globals.brand || 'atlas',
-    );
-    return Story();
-  },
-];
 
 const preview: Preview = {
+  globalTypes: {
+    brand: {
+      name: 'Brand',
+      description: 'Global brand theme',
+      defaultValue: 'atlas',
+      toolbar: {
+        icon: 'paintbrush',
+        title: 'Brand Theme',
+        items: [
+          { value: 'atlas', title: 'Atlas (Blue)', icon: 'circlehollow' },
+          { value: 'nordfox', title: 'Nordfox (Green)', icon: 'circle' },
+        ],
+        dynamicTitle: true,
+        showName: true,
+      },
+    },
+  },
+
+  decorators: [
+    (Story, ctx) => {
+      document.documentElement.setAttribute(
+        'data-brand',
+        ctx.globals.brand || 'atlas',
+      );
+      return Story();
+    },
+  ],
+
   parameters: {
     controls: {
       matchers: {

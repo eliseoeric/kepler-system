@@ -6,7 +6,10 @@
   "exports": {
     ".": {
       "default": "./dist/json/tokens.json"
-    }
+    },
+    "./dist/css/tokens.css": "./dist/css/tokens.css",
+    "./dist/css/theme-atlas.css": "./dist/css/theme-atlas.css",
+    "./dist/css/theme-nordfox.css": "./dist/css/theme-nordfox.css"
   },
   "style": "dist/css/tokens.css",
   "scripts": {

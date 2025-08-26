@@ -18,7 +18,6 @@ const config: StorybookConfig = {
   addons: [
     getAbsolutePath('@chromatic-com/storybook'),
     getAbsolutePath('@storybook/addon-docs'),
-    getAbsolutePath('@storybook/addon-onboarding'),
     getAbsolutePath('@storybook/addon-a11y'),
     getAbsolutePath('@storybook/addon-vitest'),
   ],
@@ -32,11 +31,6 @@ const config: StorybookConfig = {
     return {
       ...config,
       define: { 'process.env': {} },
-      css: {
-        postcss: {
-          plugins: [require('@tailwindcss/postcss'), require('autoprefixer')],
-        },
-      },
       resolve: {
         alias: [
           {
@@ -44,12 +38,20 @@ const config: StorybookConfig = {
             replacement: resolve(__dirname, '../../../packages/ui/'),
           },
           {
-            find: '@repo/ui',
-            replacement: resolve(__dirname, '../../../packages/ui/src'),
+            find: 'tokens',
+            replacement: resolve(__dirname, '../../../packages/tokens/'),
+          },
+          {
+            find: 'ds',
+            replacement: resolve(__dirname, '../../../packages/ds/'),
           },
           {
             find: '@repo/tokens',
             replacement: resolve(__dirname, '../../../packages/tokens/'),
+          },
+          {
+            find: '@repo/ui',
+            replacement: resolve(__dirname, '../../../packages/ui/'),
           },
         ],
       },

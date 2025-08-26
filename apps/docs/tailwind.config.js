@@ -11,9 +11,7 @@ export default {
         brand: {
           DEFAULT: "hsl(var(--color-brand) / <alpha-value>)",
           on: "hsl(var(--color-onBrand) / <alpha-value>)",
-        },
-        bg: {
-          surface: "hsl(var(--color-bg-surface) / <alpha-value>)",
+          surface: "hsl(var(--color-bg-surface) / <alpha-value>)"
         }
       },
       spacing: {
@@ -29,6 +27,9 @@ export default {
       },
       transitionDuration: {
         fast: "var(--motion-duration-fast)"
+      },
+      transitionTimingFunction: {
+        standard: "var(--motion-easing-standard)"
       }
     }
   },
