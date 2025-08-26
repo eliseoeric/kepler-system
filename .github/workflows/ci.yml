@@ -2,42 +2,70 @@ name: CI
 
 on:
   push:
-    branches: ["main"]
+    branches: ['main']
   pull_request:
     types: [opened, synchronize]
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+
 jobs:
-  build:
+  lint-and-typecheck:
+    name: Lint & Type Check
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: 📥 Checkout code
         uses: actions/checkout@v4
         with:
           fetch-depth: 2
-      
-      - name: Setup pnpm
+
+      - name: 📦 Setup pnpm
         uses: pnpm/action-setup@v3
         with:
           version: 8
 
-      - name: Set up Node.js 22.x
+      - name: ⚙️ Set up Node.js 22.x
         uses: actions/setup-node@v4
         with:
           cache: pnpm
           node-version: 22.x
 
-      - name: 📦 Install dependencies
-        run: pnpm install 
-      
-      - name: 📦 Build
-        run: pnpm build
+      - name: 📥 Install dependencies
+        run: pnpm install --frozen-lockfile
 
-      - name: 🧪 Run comprehensive linting
+      - name: 🧹 Lint (via Turbo)
         run: pnpm lint
 
-      - name: 📝 Run type check
+      - name: 🔍 Type check (via Turbo)
         run: pnpm check-types
 
-      # - name: 🚀 Test
-      #   run: pnpm test
+  build:
+    name: Build Packages
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: 📦 Setup pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 8
+
+      - name: ⚙️ Set up Node.js 22.x
+        uses: actions/setup-node@v4
+        with:
+          cache: pnpm
+          node-version: 22.x
+
+      - name: 📥 Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: 🏗️ Build packages (via Turbo)
+        run: pnpm build
+
+        # todo add testing

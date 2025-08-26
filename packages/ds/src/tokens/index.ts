@@ -34,4 +34,3 @@ export const typography = {
     '3xl': '1.875rem',
   },
 } as const;
-
