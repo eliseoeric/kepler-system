@@ -1,15 +1,16 @@
 import React from 'react';
-import { default as Navbar } from '@repo/ui/components/Navbar/withSearch/Component';
+import { NavbarWithSearch } from '@repo/ui';
 import type { Meta, StoryObj } from '@storybook/react';
 
-const meta: Meta<typeof Navbar> = {
+const meta: Meta<typeof NavbarWithSearch> = {
   title: 'Components/Navbar/WithSearch',
-  component: Navbar,
+  component: NavbarWithSearch,
   parameters: {
     layout: 'fullscreen',
     docs: {
       description: {
-        component: 'A responsive navigation bar with search functionality, user profile menu, and mobile-friendly design.',
+        component:
+          'A responsive navigation bar with search functionality, user profile menu, and mobile-friendly design.',
       },
     },
   },
@@ -20,16 +21,19 @@ export default meta;
 type StoryType = StoryObj<typeof meta>;
 
 export const Default: StoryType = {
+  render: () => <NavbarWithSearch />,
   parameters: {
     docs: {
       description: {
-        story: 'The default navbar with search functionality, navigation links, and user profile dropdown.',
+        story:
+          'The default navbar with search functionality, navigation links, and user profile dropdown.',
       },
     },
   },
 };
 
 export const DarkMode: StoryType = {
+  render: () => <NavbarWithSearch />,
   parameters: {
     docs: {
       description: {
@@ -47,6 +51,7 @@ export const DarkMode: StoryType = {
 };
 
 export const MobileView: StoryType = {
+  render: () => <NavbarWithSearch />,
   parameters: {
     viewport: {
       defaultViewport: 'mobile1',
