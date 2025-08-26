@@ -1,7 +1,0 @@
-@import './button.css';
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* Do NOT import a theme here; let host (Storybook/app) choose the brand */

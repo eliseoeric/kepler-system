@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@repo/ui": "workspace:*",
+    "@repo/tokens": "workspace:*",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
@@ -19,6 +20,7 @@
     "@chromatic-com/storybook": "^4.1.1",
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
+    "@repo/tailwind-config": "workspace:*",
     "@storybook/addon-a11y": "^9.1.2",
     "@storybook/addon-docs": "^9.1.2",
     "@storybook/addon-onboarding": "^9.1.2",

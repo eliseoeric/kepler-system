@@ -1,5 +1,7 @@
 import type { Preview } from '@storybook/react-vite';
-import '../styles.css';
+import '@repo/tokens/dist/css/theme-atlas.css';
+import '@repo/tokens/dist/css/theme-nordfox.css';
+import '@repo/ui/styles.css';
 
 const preview: Preview = {
   globalTypes: {
