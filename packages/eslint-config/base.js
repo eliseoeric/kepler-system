@@ -1,10 +1,10 @@
-import js from "@eslint/js";
-import eslintConfigPrettier from "eslint-config-prettier";
-import turboPlugin from "eslint-plugin-turbo";
-import tseslint from "typescript-eslint";
-import onlyWarn from "eslint-plugin-only-warn";
-import importHelpersPlugin from "eslint-plugin-import-helpers";
-import importPlugin from "eslint-plugin-import";
+import js from '@eslint/js';
+import eslintConfigPrettier from 'eslint-config-prettier';
+import turboPlugin from 'eslint-plugin-turbo';
+import tseslint from 'typescript-eslint';
+import onlyWarn from 'eslint-plugin-only-warn';
+import importHelpersPlugin from 'eslint-plugin-import-helpers';
+import importPlugin from 'eslint-plugin-import';
 
 /**
  * A shared ESLint configuration for the repository.
@@ -18,70 +18,70 @@ export const config = [
   {
     plugins: {
       turbo: turboPlugin,
-      "import-helpers": importHelpersPlugin,
+      'import-helpers': importHelpersPlugin,
       import: importPlugin,
     },
     rules: {
-      "turbo/no-undeclared-env-vars": "warn",
+      'turbo/no-undeclared-env-vars': 'warn',
       // TypeScript rules
-      "no-use-before-define": "off",
-      "@typescript-eslint/no-use-before-define": "error",
-      "no-unused-vars": "off",
-      "@typescript-eslint/no-unused-vars": "error",
-      "no-shadow": "off",
-      "@typescript-eslint/no-shadow": "error",
-      
+      'no-use-before-define': 'off',
+      '@typescript-eslint/no-use-before-define': 'error',
+      'no-unused-vars': 'off',
+      '@typescript-eslint/no-unused-vars': 'error',
+      'no-shadow': 'off',
+      '@typescript-eslint/no-shadow': 'error',
+
       // Import rules
-      "import/extensions": [
-        "error",
-        "ignorePackages",
+      'import/extensions': [
+        'error',
+        'ignorePackages',
         {
-          "ts": "never",
-          "tsx": "never",
+          ts: 'never',
+          tsx: 'never',
         },
       ],
-      "import/prefer-default-export": "off",
-      "import/no-unresolved": "off",
-      "import-helpers/order-imports": [
-        "warn",
+      'import/prefer-default-export': 'off',
+      'import/no-unresolved': 'off',
+      'import-helpers/order-imports': [
+        'warn',
         {
-          "groups": [
-            "/^react$/",
-            "module",
-            "/^@/.+$/",
-            ["parent", "sibling", "index"],
+          groups: [
+            '/^react$/',
+            'module',
+            '/^@/.+$/',
+            ['parent', 'sibling', 'index'],
           ],
-          "alphabetize": {
-            "order": "asc",
-            "ignoreCase": true,
+          alphabetize: {
+            order: 'asc',
+            ignoreCase: true,
           },
         },
       ],
 
       // Code style rules
-      "arrow-parens": ["error", "always"],
-      "newline-before-return": "error",
-      "no-restricted-exports": [
-        "error",
+      'arrow-parens': ['error', 'always'],
+      'newline-before-return': 'error',
+      'no-restricted-exports': [
+        'error',
         {
-          "restrictDefaultExports": {
-            "defaultFrom": false,
+          restrictDefaultExports: {
+            defaultFrom: false,
           },
         },
       ],
 
-      // TypeScript naming conventions
-      "@typescript-eslint/naming-convention": [
-        "error",
+      // TypeScript naming conventions (relaxed)
+      '@typescript-eslint/naming-convention': [
+        'error',
         {
-          "selector": "interface",
-          "format": ["PascalCase"],
-          "prefix": ["I"],
+          selector: 'interface',
+          prefix: ['I'],
+          format: ['PascalCase'],
         },
         {
-          "selector": "typeAlias",
-          "format": ["PascalCase"],
-          "suffix": ["Type"],
+          selector: 'typeAlias',
+          suffix: ['Type'],
+          format: ['PascalCase'],
         },
       ],
     },
@@ -92,6 +92,13 @@ export const config = [
     },
   },
   {
-    ignores: ["dist/**", "**/node_modules", "**/public", "**/.next", "**/.vercel", "**/*.tsbuildinfo"],
+    ignores: [
+      'dist/**',
+      '**/node_modules',
+      '**/public',
+      '**/.next',
+      '**/.vercel',
+      '**/*.tsbuildinfo',
+    ],
   },
 ];

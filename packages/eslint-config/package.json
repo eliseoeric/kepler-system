@@ -8,8 +8,11 @@
   "exports": {
     ".": "./base.js",
     "./base": "./base.js",
-    "./next-js": "./next.js",
-    "./react-internal": "./react-internal.js"
+    "./base.js": "./base.js",
+    "./next.js": "./next.js",
+    "./react-internal": "./react-internal.js",
+    "./react-internal.js": "./react-internal.js",
+    "./storybook.js": "./storybook.js"
   },
   "license": "MIT",
   "peerDependencies": {
