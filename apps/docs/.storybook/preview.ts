@@ -1,6 +1,35 @@
-import type { Preview } from '@storybook/nextjs-vite';
+import type { Preview } from '@storybook/react-vite';
+import '../styles.css';
 
 const preview: Preview = {
+  globalTypes: {
+    brand: {
+      name: 'Brand',
+      description: 'Global brand theme',
+      defaultValue: 'atlas',
+      toolbar: {
+        icon: 'paintbrush',
+        title: 'Brand Theme',
+        items: [
+          { value: 'atlas', title: 'Atlas (Blue)', icon: 'circlehollow' },
+          { value: 'nordfox', title: 'Nordfox (Green)', icon: 'circle' },
+        ],
+        dynamicTitle: true,
+        showName: true,
+      },
+    },
+  },
+
+  decorators: [
+    (Story, ctx) => {
+      document.documentElement.setAttribute(
+        'data-brand',
+        ctx.globals.brand || 'atlas',
+      );
+      return Story();
+    },
+  ],
+
   parameters: {
     controls: {
       matchers: {

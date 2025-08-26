@@ -1,0 +1,9 @@
+/* Import base tokens first */
+@import '../../packages/tokens/dist/css/tokens.css';
+
+/* Import theme CSS files */
+@import '../../packages/tokens/dist/css/theme-atlas.css';
+@import '../../packages/tokens/dist/css/theme-nordfox.css';
+
+/* Import compiled UI styles last */
+@import '../../packages/ui/dist/styles.css';
