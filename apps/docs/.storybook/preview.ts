@@ -1,7 +1,7 @@
 import type { Preview } from '@storybook/react-vite';
 import '@repo/tokens/dist/css/theme-atlas.css';
 import '@repo/tokens/dist/css/theme-nordfox.css';
-import '@repo/ui/styles.css';
+import '@repo/ui/index.css';
 
 const preview: Preview = {
   globalTypes: {
@@ -25,7 +25,7 @@ const preview: Preview = {
   decorators: [
     (Story, ctx) => {
       document.documentElement.setAttribute(
-        'data-brand',
+        'data-theme',
         ctx.globals.brand || 'atlas',
       );
       return Story();

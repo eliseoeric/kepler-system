@@ -1,8 +1,8 @@
 {
   "color": {
-    "brand": { "value": "221 83% 53%", "type": "color" },
-    "onBrand": { "value": "0 0% 100%", "type": "color" },
-    "bg": { "surface": { "value": "0 0% 100%", "type": "color" } }
+    "brand": { "value": "hsl(221 83% 53%)", "type": "color" },
+    "onBrand": { "value": "hsl(0 0% 100%)", "type": "color" },
+    "bg": { "surface": { "value": "hsl(0 0% 100%)", "type": "color" } }
   },
   "space": {
     "2": { "value": "0.5rem" },

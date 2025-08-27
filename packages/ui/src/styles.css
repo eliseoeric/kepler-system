@@ -1,1 +1,17 @@
 @import 'tailwindcss';
+
+/* Import design tokens with @theme directive */
+:root {
+  @theme {
+    --color-brand: hsl(221 83% 53%);
+    --color-onBrand: hsl(0 0% 100%);
+    --color-bg-surface: hsl(0 0% 100%);
+    --space-2: 0.5rem;
+    --space-4: 1rem;
+    --radii-md: 0.5rem;
+    --font-size-body: 0.9375rem;
+    --font-size-h1: 2rem;
+    --motion-duration-fast: 150ms;
+    --motion-easing-standard: cubic-bezier(.2,.0,.2,1);
+  }
+}

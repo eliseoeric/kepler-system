@@ -1,9 +1,7 @@
-// UI Package entry point
-// Export all components and styles
-
 // Components
-export { default as NavbarWithSearch } from './components/Navbar/withSearch';
-export { default as Button } from './components/Button';
+export { default as NavbarWithSearch } from './Navbar/withSearch';
+export { default as Button } from './Button';
+export { default as Logo } from './Logo';
 export {
   Typography,
   H1,
@@ -15,4 +13,4 @@ export {
   Body,
   Text,
   Overline,
-} from './components/Typography';
+} from './Typography';
