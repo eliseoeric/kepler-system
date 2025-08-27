@@ -1,9 +1,16 @@
-// UI Package entry point
-// Export all components and styles
-
 // Components
-export { default as NavbarWithSearch } from './components/Navbar/withSearch';
-export { default as Button } from './components/Button';
-
-// Styles - import to ensure they're included in the bundle
-import './styles/index.css';
+export { default as NavbarWithSearch } from './Navbar/withSearch';
+export { default as Button } from './Button';
+export { default as Logo } from './Logo';
+export {
+  Typography,
+  H1,
+  H2,
+  H3,
+  H4,
+  H5,
+  H6,
+  Body,
+  Text,
+  Overline,
+} from './Typography';

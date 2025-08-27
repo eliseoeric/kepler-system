@@ -11,18 +11,18 @@ export default {
       files: [
         {
           destination: 'theme-nordfox.css',
-          format: 'css/vars-no-hsl-wrapper',
-          options: { selector: '[data-brand="nordfox"]' }
+          format: 'css/theme',
+          options: { selector: '[data-theme="nordfox"]' }
         }
       ]
     }
   },
   hooks: {
     formats: {
-      'css/vars-no-hsl-wrapper': ({ dictionary, options }) => {
+      'css/theme': ({ dictionary, options }) => {
         const { selector = ':root' } = options || {};
         const lines = dictionary.allTokens.map(t => `  ${cssVarName(t.path)}: ${t.value};`);
-        return `${selector}{\n${lines.join('\n')}\n}\n`;
+        return `${selector} {\n${lines.join('\n')}\n}\n`;
       }
     }
   }

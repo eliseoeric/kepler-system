@@ -11,10 +11,7 @@ function getAbsolutePath(value: string): any {
 }
 
 const config: StorybookConfig = {
-  stories: [
-    '../stories/**/*.mdx',
-    '../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)',
-  ],
+  stories: ['../stories/*.stories.tsx', '../stories/**/*.stories.tsx'],
   addons: [
     getAbsolutePath('@chromatic-com/storybook'),
     getAbsolutePath('@storybook/addon-docs'),
@@ -34,8 +31,8 @@ const config: StorybookConfig = {
       resolve: {
         alias: [
           {
-            find: 'ui',
-            replacement: resolve(__dirname, '../../../packages/ui/'),
+            find: '@repo/ui',
+            replacement: resolve(__dirname, '../../../packages/ui/dist/'),
           },
           {
             find: 'tokens',
@@ -44,14 +41,6 @@ const config: StorybookConfig = {
           {
             find: 'ds',
             replacement: resolve(__dirname, '../../../packages/ds/'),
-          },
-          {
-            find: '@repo/tokens',
-            replacement: resolve(__dirname, '../../../packages/tokens/'),
-          },
-          {
-            find: '@repo/ui',
-            replacement: resolve(__dirname, '../../../packages/ui/'),
           },
         ],
       },
