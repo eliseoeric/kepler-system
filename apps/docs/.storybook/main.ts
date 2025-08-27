@@ -35,12 +35,40 @@ const config: StorybookConfig = {
             replacement: resolve(__dirname, '../../../packages/ui/dist/'),
           },
           {
-            find: 'tokens',
-            replacement: resolve(__dirname, '../../../packages/tokens/'),
+            find: '@repo/core',
+            replacement: resolve(__dirname, '../../../packages/core/dist/'),
           },
           {
-            find: 'ds',
-            replacement: resolve(__dirname, '../../../packages/ds/'),
+            find: '@repo/actions',
+            replacement: resolve(__dirname, '../../../packages/actions/dist/'),
+          },
+          {
+            find: '@repo/typography',
+            replacement: resolve(__dirname, '../../../packages/typography/dist/'),
+          },
+          {
+            find: '@repo/layout',
+            replacement: resolve(__dirname, '../../../packages/layout/dist/'),
+          },
+          {
+            find: '@repo/navigation',
+            replacement: resolve(__dirname, '../../../packages/navigation/dist/'),
+          },
+          {
+            find: '@repo/forms',
+            replacement: resolve(__dirname, '../../../packages/forms/dist/'),
+          },
+          {
+            find: '@repo/feedback',
+            replacement: resolve(__dirname, '../../../packages/feedback/dist/'),
+          },
+          {
+            find: '@repo/data-display',
+            replacement: resolve(__dirname, '../../../packages/data-display/dist/'),
+          },
+          {
+            find: 'tokens',
+            replacement: resolve(__dirname, '../../../packages/tokens/'),
           },
         ],
       },

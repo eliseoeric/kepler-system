@@ -13,6 +13,14 @@
   "dependencies": {
     "@repo/ui": "workspace:*",
     "@repo/tokens": "workspace:*",
+    "@repo/core": "workspace:*",
+    "@repo/actions": "workspace:*",
+    "@repo/typography": "workspace:*",
+    "@repo/layout": "workspace:*",
+    "@repo/navigation": "workspace:*",
+    "@repo/forms": "workspace:*",
+    "@repo/feedback": "workspace:*",
+    "@repo/data-display": "workspace:*",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
