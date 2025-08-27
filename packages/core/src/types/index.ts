@@ -1,6 +1,7 @@
 // Component metadata interface for Figma integration and versioning
 export interface ComponentMeta {
   figmaNodeId: string;
+  packageName: string;
   packageVersion: string;
   tokensUsed: string[];
   lastSyncDate: string;
