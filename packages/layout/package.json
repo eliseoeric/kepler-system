@@ -1,5 +1,5 @@
 {
-  "name": "@repo/layout",
+  "name": "@eliseoeric/layout",
   "version": "0.1.0",
   "sideEffects": false,
   "files": [
@@ -16,10 +16,10 @@
     "check-types": "tsc --noEmit"
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
-    "@repo/tokens": "workspace:*",
-    "@repo/core": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
+    "@eliseoeric/eslint-config": "workspace:*",
+    "@eliseoeric/tokens": "workspace:*",
+    "@eliseoeric/core": "workspace:*",
+    "@eliseoeric/typescript-config": "workspace:*",
     "@types/node": "^22.15.3",
     "@types/react": "19.1.0",
     "@types/react-dom": "19.1.1",

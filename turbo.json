@@ -10,7 +10,7 @@
     "build:styles": {
       "inputs": ["src/**/*.css"],
       "outputs": ["dist/styles.css"],
-      "dependsOn": ["@repo/tokens#build"]
+      "dependsOn": ["@eliseoeric/tokens#build"]
     },
     "lint": {
       "dependsOn": ["^lint"]

@@ -11,7 +11,7 @@ import {
   Body,
   Text,
   Overline,
-} from '@repo/typography';
+} from '@eliseoeric/typography';
 
 const meta: Meta<typeof Typography> = {
   title: 'Components/Typography',
