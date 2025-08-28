@@ -1,0 +1,38 @@
+{
+  "name": "@repo/styles",
+  "version": "0.1.0",
+  "description": "Consolidated CSS package for all design system components",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    "./styles.css": "./dist/index.css",
+    ".": "./dist/index.css"
+  },
+  "scripts": {
+    "build:styles": "postcss ./src/styles.css -o ./dist/index.css --verbose",
+    "dev:styles": "postcss ./src/styles.css -o ./dist/index.css --watch --verbose",
+    "build": "pnpm run build:styles",
+    "clean": "rm -rf .turbo node_modules dist"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/tokens": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@tailwindcss/cli": "^4.1.5",
+    "@tailwindcss/postcss": "^4.1.12",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9.33.0",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "postcss-import": "^16.1.1",
+    "tailwindcss": "^4.1.5"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "public"
+  }
+}

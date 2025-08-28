@@ -1,4 +1,5 @@
 import type { StorybookConfig } from '@storybook/react-vite';
+import { mergeConfig } from 'vite';
 
 import { join, dirname, resolve } from 'path';
 
@@ -23,28 +24,67 @@ const config: StorybookConfig = {
     options: {},
   },
 
-  async viteFinal(config, { configType }) {
+  async viteFinal(config) {
     // customize the Vite config here
-    return {
-      ...config,
+    const { default: tailwindcss } = await import('@tailwindcss/vite');
+    return mergeConfig(config, {
+      plugins: [tailwindcss()],
       define: { 'process.env': {} },
       resolve: {
         alias: [
           {
-            find: '@repo/ui',
-            replacement: resolve(__dirname, '../../../packages/ui/dist/'),
+            find: '@repo/core',
+            replacement: resolve(__dirname, '../../../packages/core/dist/'),
+          },
+          {
+            find: '@repo/actions',
+            replacement: resolve(__dirname, '../../../packages/actions/dist/'),
+          },
+          {
+            find: '@repo/typography',
+            replacement: resolve(
+              __dirname,
+              '../../../packages/typography/dist/',
+            ),
+          },
+          {
+            find: '@repo/layout',
+            replacement: resolve(__dirname, '../../../packages/layout/dist/'),
+          },
+          {
+            find: '@repo/navigation',
+            replacement: resolve(
+              __dirname,
+              '../../../packages/navigation/dist/',
+            ),
+          },
+          {
+            find: '@repo/forms',
+            replacement: resolve(__dirname, '../../../packages/forms/dist/'),
+          },
+          {
+            find: '@repo/feedback',
+            replacement: resolve(__dirname, '../../../packages/feedback/dist/'),
+          },
+          {
+            find: '@repo/data-display',
+            replacement: resolve(
+              __dirname,
+              '../../../packages/data-display/dist/',
+            ),
           },
           {
             find: 'tokens',
             replacement: resolve(__dirname, '../../../packages/tokens/'),
           },
+          // Use source CSS for live HMR
           {
-            find: 'ds',
-            replacement: resolve(__dirname, '../../../packages/ds/'),
+            find: '@repo/styles',
+            replacement: resolve(__dirname, '../../../packages/styles/'),
           },
         ],
       },
-    };
+    });
   },
 
   docs: {

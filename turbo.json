@@ -7,6 +7,11 @@
       "outputs": ["dist/**", "storybook-static/**"],
       "dependsOn": ["^build"]
     },
+    "build:styles": {
+      "inputs": ["src/**/*.css"],
+      "outputs": ["dist/styles.css"],
+      "dependsOn": ["@repo/tokens#build"]
+    },
     "lint": {
       "dependsOn": ["^lint"]
     },

@@ -11,7 +11,7 @@ import {
   Body,
   Text,
   Overline,
-} from '@repo/ui';
+} from '@repo/typography';
 
 const meta: Meta<typeof Typography> = {
   title: 'Components/Typography',
