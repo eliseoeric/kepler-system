@@ -8,13 +8,13 @@
     "dist"
   ],
   "exports": {
-    "./styles.css": "./dist/index.css",
+    
     "./*": "./dist/*.js"
   },
   "scripts": {
-    "build:styles": "tailwindcss -i ./src/styles.css -o ./dist/index.css",
-    "dev:styles": "tailwindcss -i ./src/styles.css -o ./dist/index.css --watch",
-    "build": "npm run build:styles && tsup",
+    
+    
+    "build": "tsup",
     "watch": "tsup --watch",
     "lint": "eslint . --max-warnings 0",
     "clean": "rm -rf .turbo node_modules dist",
