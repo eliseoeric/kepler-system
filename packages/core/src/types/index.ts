@@ -1,5 +1,5 @@
 // Component metadata interface for Figma integration and versioning
-export interface ComponentMeta {
+export interface IComponentMeta {
   figmaNodeId: string;
   packageName: string;
   packageVersion: string;
@@ -9,17 +9,22 @@ export interface ComponentMeta {
 }
 
 // Common component props
-export interface BaseComponentProps {
+export interface IBaseComponentProps {
   className?: string;
   children?: React.ReactNode;
 }
 
 // Theme and variant types
-export type ColorVariant = 'primary' | 'secondary' | 'success' | 'warning' | 'error';
-export type SizeVariant = 'sm' | 'md' | 'lg' | 'xl';
+export type ColorVariantType =
+  | 'primary'
+  | 'secondary'
+  | 'success'
+  | 'warning'
+  | 'error';
+export type SizeVariantType = 'sm' | 'md' | 'lg' | 'xl';
 
 // Design token types
-export interface DesignTokens {
+export interface IDesignTokens {
   colors: Record<string, string>;
   spacing: Record<string, string>;
   typography: Record<string, string>;
