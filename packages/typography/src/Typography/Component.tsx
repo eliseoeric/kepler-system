@@ -1,5 +1,5 @@
 import React from 'react';
-import { classNames } from '@repo/core';
+import classNames from 'classnames';
 
 // Font weights for Montserrat
 type FontWeightType =

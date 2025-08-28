@@ -1,5 +1,4 @@
-/* Import design tokens from tokens package
-@import '../../tokens/dist/css/tokens.css'; */
+@import '../../tokens/dist/css/tokens.css';
 
 @import 'tailwindcss' source(none);
 @source "../../actions/src";

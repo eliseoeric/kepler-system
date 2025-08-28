@@ -1,5 +1,19 @@
 {
   "color": {
-    "brand": { "value": "hsl(142 60% 45%)" }
+    "green": {
+      "500": { "value": "hsl(142 60% 45%)", "type": "color" },
+      "600": { "value": "hsl(142 60% 38%)", "type": "color" },
+      "700": { "value": "hsl(142 60% 32%)", "type": "color" }
+    },
+    "primary": {
+      "500": { "value": "hsl(142 60% 45%)", "type": "color" },
+      "600": { "value": "hsl(142 60% 38%)", "type": "color" },
+      "700": { "value": "hsl(142 60% 32%)", "type": "color" }
+    },
+    "accent": {
+      "500": { "value": "hsl(142 60% 55%)", "type": "color" },
+      "600": { "value": "hsl(142 60% 48%)", "type": "color" },
+      "700": { "value": "hsl(142 60% 40%)", "type": "color" }
+    }
   }
 }

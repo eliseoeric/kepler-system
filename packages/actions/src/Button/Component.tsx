@@ -1,5 +1,5 @@
 import React, { ButtonHTMLAttributes } from 'react';
-import { classNames } from '@repo/core';
+import classNames from 'classnames';
 
 type ButtonSizeType = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
@@ -23,7 +23,7 @@ const Button = ({
   ...props
 }: IButtonProps): React.JSX.Element => {
   const baseClasses =
-    'bg-brand font-semibold text-brand-on shadow-sm hover:bg-brand/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand dark:bg-brand dark:shadow-none dark:hover:bg-brand/80 dark:focus-visible:outline-brand';
+    'bg-primary-500 font-semibold text-white shadow-sm hover:bg-primary-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500 dark:bg-primary-600 dark:shadow-none dark:hover:bg-primary-700 dark:focus-visible:outline-primary-600';
   const sizeClass = sizeClasses[size];
 
   return (

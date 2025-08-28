@@ -1,5 +1,14 @@
 {
   "color": {
-    "brand": { "value": "hsl(221 83% 53%)" }
+    "blue": {
+      "500": { "value": "hsl(221 83% 53%)", "type": "color" },
+      "600": { "value": "hsl(221 83% 45%)", "type": "color" },
+      "700": { "value": "hsl(221 83% 38%)", "type": "color" }
+    },
+    "primary": {
+      "500": { "value": "hsl(221 83% 53%)", "type": "color" },
+      "600": { "value": "hsl(221 83% 45%)", "type": "color" },
+      "700": { "value": "hsl(221 83% 38%)", "type": "color" }
+    }
   }
 }
