@@ -64,7 +64,7 @@ get_version_bump() {
     echo "major"
   elif [[ "$commit_type" == "feat" ]]; then
     echo "minor"
-  elif [[ "$commit_type" =~ ^(fix|perf)$ ]]; then
+  elif [[ "$commit_type" =~ ^(fix|perf|refactor|style|chore)$ ]]; then
     echo "patch"
   else
     echo ""  # No version bump for other types
