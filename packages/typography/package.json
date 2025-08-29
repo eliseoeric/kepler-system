@@ -20,7 +20,6 @@
   "devDependencies": {
     "@eliseoeric/eslint-config": "workspace:*",
     "@eliseoeric/tokens": "workspace:*",
-    "@eliseoeric/core": "workspace:*",
     "@eliseoeric/typescript-config": "workspace:*",
     "@eliseoeric/tailwind-config": "workspace:*",
     "@tailwindcss/cli": "^4.1.5",

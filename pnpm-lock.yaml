@@ -54,9 +54,6 @@ importers:
       '@eliseoeric/actions':
         specifier: workspace:*
         version: link:../../packages/actions
-      '@eliseoeric/core':
-        specifier: workspace:*
-        version: link:../../packages/core
       '@eliseoeric/data-display':
         specifier: workspace:*
         version: link:../../packages/data-display
@@ -203,9 +200,6 @@ importers:
         specifier: ^19.1.0
         version: 19.1.1(react@19.1.1)
     devDependencies:
-      '@eliseoeric/core':
-        specifier: workspace:*
-        version: link:../core
       '@eliseoeric/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
@@ -289,9 +283,6 @@ importers:
         specifier: ^19.1.0
         version: 19.1.1(react@19.1.1)
     devDependencies:
-      '@eliseoeric/core':
-        specifier: workspace:*
-        version: link:../core
       '@eliseoeric/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
@@ -507,9 +498,6 @@ importers:
         specifier: ^7.62.0
         version: 7.62.0(react@19.1.1)
     devDependencies:
-      '@eliseoeric/core':
-        specifier: workspace:*
-        version: link:../core
       '@eliseoeric/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
@@ -601,9 +589,6 @@ importers:
         specifier: ^19.1.0
         version: 19.1.1(react@19.1.1)
     devDependencies:
-      '@eliseoeric/core':
-        specifier: workspace:*
-        version: link:../core
       '@eliseoeric/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
@@ -659,9 +644,6 @@ importers:
         specifier: ^19.1.0
         version: 19.1.1(react@19.1.1)
     devDependencies:
-      '@eliseoeric/core':
-        specifier: workspace:*
-        version: link:../core
       '@eliseoeric/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
@@ -852,9 +834,6 @@ importers:
         specifier: ^19.1.0
         version: 19.1.1(react@19.1.1)
     devDependencies:
-      '@eliseoeric/core':
-        specifier: workspace:*
-        version: link:../core
       '@eliseoeric/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
