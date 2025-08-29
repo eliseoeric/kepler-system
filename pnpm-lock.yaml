@@ -84,6 +84,9 @@ importers:
       '@eliseoeric/typography':
         specifier: workspace:*
         version: link:../../packages/typography
+      '@heroicons/react':
+        specifier: ^2.2.0
+        version: 2.2.0(react@19.1.1)
       react:
         specifier: ^19.1.0
         version: 19.1.1
@@ -485,9 +488,9 @@ importers:
       '@hookform/resolvers':
         specifier: ^5.0.1
         version: 5.2.1(react-hook-form@7.62.0)
-      classnames:
-        specifier: ^2.5.1
-        version: 2.5.1
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
       react:
         specifier: ^19.1.0
         version: 19.1.1
@@ -555,9 +558,9 @@ importers:
 
   packages/layout:
     dependencies:
-      classnames:
-        specifier: ^2.5.1
-        version: 2.5.1
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
       react:
         specifier: ^19.1.0
         version: 19.1.1
