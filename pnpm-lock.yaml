@@ -17,9 +17,15 @@ importers:
         specifier: ^9.33.0
         version: 9.33.0
     devDependencies:
+      '@changesets/changelog-github':
+        specifier: ^0.5.1
+        version: 0.5.1
       '@changesets/cli':
         specifier: ^2.27.1
         version: 2.29.6(@types/node@22.17.2)
+      '@changesets/get-github-info':
+        specifier: ^0.6.0
+        version: 0.6.0
       '@types/eslint':
         specifier: ^9.6.1
         version: 9.6.1
@@ -1113,6 +1119,19 @@ packages:
       '@changesets/types': 6.1.0
     dev: true
 
+  /@changesets/changelog-github@0.5.1:
+    resolution:
+      {
+        integrity: sha512-BVuHtF+hrhUScSoHnJwTELB4/INQxVFc+P/Qdt20BLiBFIHFJDDUaGsZw+8fQeJTRP5hJZrzpt3oZWh0G19rAQ==,
+      }
+    dependencies:
+      '@changesets/get-github-info': 0.6.0
+      '@changesets/types': 6.1.0
+      dotenv: 8.6.0
+    transitivePeerDependencies:
+      - encoding
+    dev: true
+
   /@changesets/cli@2.29.6(@types/node@22.17.2):
     resolution:
       {
@@ -1186,6 +1205,18 @@ packages:
       '@manypkg/get-packages': 1.1.3
       picocolors: 1.1.1
       semver: 7.7.2
+    dev: true
+
+  /@changesets/get-github-info@0.6.0:
+    resolution:
+      {
+        integrity: sha512-v/TSnFVXI8vzX9/w3DU2Ol+UlTZcu3m0kXTjTT4KlAdwSvwutcByYwyYn9hwerPWfPkT2JfpoX0KgvCEi8Q/SA==,
+      }
+    dependencies:
+      dataloader: 1.4.0
+      node-fetch: 2.7.0
+    transitivePeerDependencies:
+      - encoding
     dev: true
 
   /@changesets/get-release-plan@4.0.13:
@@ -5690,6 +5721,13 @@ packages:
       is-data-view: 1.0.2
     dev: false
 
+  /dataloader@1.4.0:
+    resolution:
+      {
+        integrity: sha512-68s5jYdlvasItOJnCuI2Q9s4q98g0pCyL3HrcKJu8KNugUl8ahgmZYg38ysLTgQjjXX3H8CJLkAvWrclWfcalw==,
+      }
+    dev: true
+
   /debug@2.6.9:
     resolution:
       {
@@ -5919,6 +5957,14 @@ packages:
       }
     engines: { node: '>=12' }
     dev: false
+
+  /dotenv@8.6.0:
+    resolution:
+      {
+        integrity: sha512-IrPdXQsk2BbzvCBGBOTmmSH5SodmqZNt4ERAZDmW4CT+tL8VtvinqywuANaFu4bOMWki16nqf0e4oC0QIaDr/g==,
+      }
+    engines: { node: '>=10' }
+    dev: true
 
   /dunder-proto@1.0.1:
     resolution:
@@ -9537,6 +9583,21 @@ packages:
       }
     dev: true
 
+  /node-fetch@2.7.0:
+    resolution:
+      {
+        integrity: sha512-c4FRfUm/dbcWZ7U+1Wq0AwCyFL+3nt2bEw05wfxSz+DWpWsitgmSgYmy2dQdWyKC1694ELPqMs/YzUSNozLt8A==,
+      }
+    engines: { node: 4.x || >=6.0.0 }
+    peerDependencies:
+      encoding: ^0.1.0
+    peerDependenciesMeta:
+      encoding:
+        optional: true
+    dependencies:
+      whatwg-url: 5.0.0
+    dev: true
+
   /node-releases@2.0.19:
     resolution:
       {
@@ -11903,6 +11964,13 @@ packages:
     engines: { node: '>=6' }
     dev: true
 
+  /tr46@0.0.3:
+    resolution:
+      {
+        integrity: sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==,
+      }
+    dev: true
+
   /tr46@1.0.1:
     resolution:
       {
@@ -12786,6 +12854,13 @@ packages:
       }
     dev: false
 
+  /webidl-conversions@3.0.1:
+    resolution:
+      {
+        integrity: sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==,
+      }
+    dev: true
+
   /webidl-conversions@4.0.2:
     resolution:
       {
@@ -12798,6 +12873,16 @@ packages:
       {
         integrity: sha512-66/V2i5hQanC51vBQKPH4aI8NMAcBW59FVBs+rC7eGHupMyfn34q7rZIE+ETlJ+XTevqfUhVVBgSUNSW2flEUQ==,
       }
+    dev: true
+
+  /whatwg-url@5.0.0:
+    resolution:
+      {
+        integrity: sha512-saE57nupxk6v3HY35+jzBwYa0rKSy0XR8JSxZPwgLr7ys0IBzhGviA1/TUGJLmSVqs8pb9AnvICXEuOHLprYTw==,
+      }
+    dependencies:
+      tr46: 0.0.3
+      webidl-conversions: 3.0.1
     dev: true
 
   /whatwg-url@7.1.0:
