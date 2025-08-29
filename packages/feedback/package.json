@@ -1,5 +1,5 @@
 {
-  "name": "@repo/feedback",
+  "name": "@eliseoeric/feedback",
   "version": "0.1.0",
   "sideEffects": [
     "**/*.css"
@@ -8,12 +8,9 @@
     "dist"
   ],
   "exports": {
-    
     "./*": "./dist/*.js"
   },
   "scripts": {
-    
-    
     "build": "tsup",
     "watch": "tsup --watch",
     "lint": "eslint . --max-warnings 0",
@@ -21,11 +18,11 @@
     "check-types": "tsc --noEmit"
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
-    "@repo/tokens": "workspace:*",
-    "@repo/core": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
-    "@repo/tailwind-config": "workspace:*",
+    "@eliseoeric/eslint-config": "workspace:*",
+    "@eliseoeric/tokens": "workspace:*",
+    "@eliseoeric/core": "workspace:*",
+    "@eliseoeric/typescript-config": "workspace:*",
+    "@eliseoeric/tailwind-config": "workspace:*",
     "@tailwindcss/cli": "^4.1.5",
     "@tailwindcss/postcss": "^4.1.5",
     "@types/node": "^22.15.3",

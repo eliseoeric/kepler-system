@@ -33,41 +33,41 @@ const config: StorybookConfig = {
       resolve: {
         alias: [
           {
-            find: '@repo/core',
+            find: '@eliseoeric/core',
             replacement: resolve(__dirname, '../../../packages/core/dist/'),
           },
           {
-            find: '@repo/actions',
+            find: '@eliseoeric/actions',
             replacement: resolve(__dirname, '../../../packages/actions/dist/'),
           },
           {
-            find: '@repo/typography',
+            find: '@eliseoeric/typography',
             replacement: resolve(
               __dirname,
               '../../../packages/typography/dist/',
             ),
           },
           {
-            find: '@repo/layout',
+            find: '@eliseoeric/layout',
             replacement: resolve(__dirname, '../../../packages/layout/dist/'),
           },
           {
-            find: '@repo/navigation',
+            find: '@eliseoeric/navigation',
             replacement: resolve(
               __dirname,
               '../../../packages/navigation/dist/',
             ),
           },
           {
-            find: '@repo/forms',
+            find: '@eliseoeric/forms',
             replacement: resolve(__dirname, '../../../packages/forms/dist/'),
           },
           {
-            find: '@repo/feedback',
+            find: '@eliseoeric/feedback',
             replacement: resolve(__dirname, '../../../packages/feedback/dist/'),
           },
           {
-            find: '@repo/data-display',
+            find: '@eliseoeric/data-display',
             replacement: resolve(
               __dirname,
               '../../../packages/data-display/dist/',
@@ -79,7 +79,7 @@ const config: StorybookConfig = {
           },
           // Use source CSS for live HMR
           {
-            find: '@repo/styles',
+            find: '@eliseoeric/styles',
             replacement: resolve(__dirname, '../../../packages/styles/'),
           },
         ],

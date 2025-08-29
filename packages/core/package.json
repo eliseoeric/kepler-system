@@ -1,5 +1,5 @@
 {
-  "name": "@repo/core",
+  "name": "@eliseoeric/core",
   "version": "0.1.0",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -23,8 +23,8 @@
     "check-types": "tsc --noEmit"
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
+    "@eliseoeric/eslint-config": "workspace:*",
+    "@eliseoeric/typescript-config": "workspace:*",
     "@types/node": "^22.15.3",
     "@types/react": "19.1.0",
     "@types/react-dom": "19.1.1",

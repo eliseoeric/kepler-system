@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { NavbarWithSearch } from '@repo/navigation';
+import { NavbarWithSearch } from '@eliseoeric/navigation';
 
 const meta: Meta<typeof NavbarWithSearch> = {
   title: 'Navigation/NavbarWithSearch',
@@ -22,7 +22,8 @@ export const Default: Story = {
           Page Content
         </h1>
         <p className="mt-4 text-gray-600 dark:text-gray-400">
-          This navbar includes a search input, navigation links, user menu, and mobile responsiveness.
+          This navbar includes a search input, navigation links, user menu, and
+          mobile responsiveness.
         </p>
       </div>
     </div>

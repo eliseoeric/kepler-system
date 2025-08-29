@@ -2,6 +2,6 @@
 export default [
   {
     files: ['**/*.{js,jsx,ts,tsx}'],
-    extends: ['@repo/eslint-config/storybook.js'],
+    extends: ['@eliseoeric/eslint-config/storybook.js'],
   },
 ];
