@@ -15,7 +15,6 @@
   },
   "dependencies": {
     "@eliseoeric/actions": "workspace:*",
-    "@eliseoeric/core": "workspace:*",
     "@eliseoeric/data-display": "workspace:*",
     "@eliseoeric/feedback": "workspace:*",
     "@eliseoeric/forms": "workspace:*",

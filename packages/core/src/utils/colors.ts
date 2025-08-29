@@ -73,16 +73,6 @@ export const getHoverBgClass = (
 };
 
 /**
- * Generate hover text color class
- */
-export const getHoverTextClass = (
-  color: ColorSelectionType,
-  shade: ColorShadeType = 700,
-): string => {
-  return `hover:text-${color}-${shade}`;
-};
-
-/**
  * Button variant classes generator
  */
 export const getButtonVariantClasses = (
@@ -186,28 +176,4 @@ export const getAlertVariantClasses = (
         descriptionText: 'text-white/50',
       };
   }
-};
-
-/**
- * Generate complete class string for button variants
- * todo not sure we'll use this
- */
-export const getButtonClasses = (
-  color: ColorSelectionType,
-  variant: 'solid' | 'outline' | 'plain' = 'solid',
-): string => {
-  const classes = getButtonVariantClasses(color, variant);
-
-  return Object.values(classes).join(' ');
-};
-
-/**
- * Get all available color options for dropdowns/selects
- * todo not sure we'll use this
- */
-export const getColorDropdownOptions = () => {
-  return colorOptions.map((color) => ({
-    title: color.charAt(0).toUpperCase() + color.slice(1),
-    value: color,
-  }));
 };
