@@ -68,4 +68,38 @@ jobs:
       - name: 🏗️ Build packages (via Turbo)
         run: pnpm build
 
-        # todo add testing
+  test:
+    name: Run Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: 📦 Setup pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 8
+
+      - name: ⚙️ Set up Node.js 22.x
+        uses: actions/setup-node@v4
+        with:
+          cache: pnpm
+          node-version: 22.x
+
+      - name: 📥 Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: 🏗️ Build packages (required for tests)
+        run: pnpm build
+
+      - name: 🧪 Install Playwright browsers
+        run: npx playwright install chromium
+
+      - name: 🧪 Run unit tests
+        run: pnpm test:unit
+
+      - name: 🧪 Run Storybook interaction tests
+        run: pnpm test:storybook

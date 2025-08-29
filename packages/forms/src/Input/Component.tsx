@@ -61,4 +61,6 @@ const Input: React.FC<IInputPropsType> = ({
   );
 };
 
+Input.displayName = 'Input';
+
 export default Input;
