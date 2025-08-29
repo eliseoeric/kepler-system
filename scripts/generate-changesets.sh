@@ -48,7 +48,7 @@ discover_packages() {
       else
         packages="$package_name"
       fi
-      echo "  Found changes in $package_dir -> $package_name"
+      echo "  Found changes in $package_dir -> $package_name" >&2
     fi
   done < <(find packages/ -name "package.json" -print0 2>/dev/null || true)
   
