@@ -96,7 +96,7 @@ jobs:
         run: pnpm build
 
       - name: 🧪 Install Playwright browsers
-        run: npx playwright install chromium
+        run: pnpm --filter=docs exec playwright install chromium
 
       - name: 🧪 Run unit tests
         run: pnpm test:unit
