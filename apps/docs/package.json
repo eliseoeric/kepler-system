@@ -18,6 +18,7 @@
     "@eliseoeric/forms": "workspace:*",
     "@eliseoeric/layout": "workspace:*",
     "@eliseoeric/navigation": "workspace:*",
+    "@eliseoeric/primitives": "workspace:*",
     "@eliseoeric/styles": "workspace:*",
     "@eliseoeric/tokens": "workspace:*",
     "@eliseoeric/typography": "workspace:*",

@@ -59,6 +59,13 @@ const config: StorybookConfig = {
             ),
           },
           {
+            find: '@eliseoeric/primitives',
+            replacement: resolve(
+              __dirname,
+              '../../../packages/primitives/dist/',
+            ),
+          },
+          {
             find: '@eliseoeric/forms',
             replacement: resolve(__dirname, '../../../packages/forms/dist/'),
           },
