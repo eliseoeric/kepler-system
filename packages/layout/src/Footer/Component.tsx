@@ -1,11 +1,19 @@
+import clsx from 'clsx';
+
 interface IFooterProps {
   copyrightText: string;
   companyName: string;
+  className?: string;
 }
 
-const Component = ({ copyrightText, companyName }: IFooterProps) => {
+const Component: React.FC<IFooterProps> = ({
+  copyrightText,
+  companyName,
+  className,
+  ...props
+}: IFooterProps) => {
   return (
-    <footer>
+    <footer className={clsx('bg-white', className)} {...props}>
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
         <div className="border-t border-gray-200 py-8 text-center text-sm text-gray-500 sm:text-left dark:border-gray-700 dark:text-gray-400">
           <span className="block sm:inline">{copyrightText}</span>{' '}

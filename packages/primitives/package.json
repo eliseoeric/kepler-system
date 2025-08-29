@@ -1,0 +1,53 @@
+{
+  "name": "@eliseoeric/primitives",
+  "version": "0.1.0",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": "./dist/index.js",
+    "./*": "./dist/*.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsup",
+    "watch": "tsup --watch",
+    "lint": "eslint . --max-warnings 0",
+    "clean": "rm -rf .turbo node_modules dist",
+    "check-types": "tsc --noEmit",
+    "test": "vitest --run",
+    "test:watch": "vitest --watch",
+    "test:coverage": "vitest --coverage --run"
+  },
+  "devDependencies": {
+    "@eliseoeric/eslint-config": "workspace:*",
+    "@eliseoeric/tokens": "workspace:*",
+    "@eliseoeric/core": "workspace:*",
+    "@eliseoeric/typescript-config": "workspace:*",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.1.0",
+    "@types/node": "^22.15.3",
+    "@types/react": "19.1.0",
+    "@types/react-dom": "19.1.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.33.0",
+    "jsdom": "^25.0.1",
+    "tsup": "^8.0.2",
+    "typescript": "5.9.2",
+    "vitest": "^2.1.8"
+  },
+  "dependencies": {
+    "@headlessui/react": "^2.2.2",
+    "@headlessui/tailwindcss": "^0.2.2",
+    "@heroicons/react": "^2.2.0",
+    "clsx": "^2.1.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "public"
+  }
+}

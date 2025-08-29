@@ -1,2 +1,1 @@
-// Feedback components exports
-// Components will be added during migration
+export { Alert, AlertActions, AlertTitle, AlertDescription } from './Alert';

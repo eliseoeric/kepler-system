@@ -16,7 +16,33 @@
       "dependsOn": ["^lint"]
     },
     "check-types": {
-      "dependsOn": ["^check-types"]
+      "dependsOn": ["^build"]
+    },
+    "test": {
+      "dependsOn": ["^build"],
+      "inputs": [
+        "src/**/*.tsx",
+        "src/**/*.ts",
+        "**/*.test.tsx",
+        "**/*.test.ts",
+        "**/*.stories.tsx"
+      ],
+      "outputs": []
+    },
+    "test:unit": {
+      "dependsOn": ["^build"],
+      "inputs": [
+        "src/**/*.tsx",
+        "src/**/*.ts",
+        "**/*.test.tsx",
+        "**/*.test.ts"
+      ],
+      "outputs": []
+    },
+    "test:storybook": {
+      "dependsOn": ["^build"],
+      "inputs": ["stories/**/*.stories.tsx", "**/*.stories.tsx"],
+      "outputs": []
     },
     "dev": {
       "cache": false,
