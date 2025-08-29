@@ -1,9 +1,14 @@
 name: Release
 
 on:
+  workflow_run:
+    workflows: ['Auto Changeset']
+    types: [completed]
   push:
-    branches:
-      - main
+    branches: [main] # keep this so publishing still happens after the version PR merge
+    paths:
+      - '**/package.json'
+      - '**/CHANGELOG.md'
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
