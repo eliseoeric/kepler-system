@@ -1,0 +1,68 @@
+name: Auto Changeset
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  auto-changeset:
+    name: Create Changesets from Conventional Commits
+    runs-on: ubuntu-latest
+    if: >-
+      !contains(github.event.head_commit.message, 'Version Packages') &&
+      !contains(github.event.head_commit.message, '[skip changeset]')
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 8
+
+      - name: Setup Node.js 22.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Install jq for JSON parsing
+        run: sudo apt-get update && sudo apt-get install -y jq
+
+      - name: Get last release commit
+        id: last-release
+        run: |
+          LAST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "")
+          if [ -z "$LAST_TAG" ]; then
+            # If no tags, get first commit
+            LAST_COMMIT=$(git rev-list --max-parents=0 HEAD)
+          else
+            LAST_COMMIT=$(git rev-list -n 1 $LAST_TAG)
+          fi
+          echo "last_commit=$LAST_COMMIT" >> $GITHUB_OUTPUT
+
+      - name: Generate changesets from conventional commits
+        run: ./scripts/generate-changesets.sh ${{ steps.last-release.outputs.last_commit }}
+
+      - name: Commit changesets
+        run: |
+          if git diff --staged --quiet; then
+            echo "No changesets to commit"
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: auto-generated changesets from conventional commits [skip changeset]"
+          git push
