@@ -4,7 +4,7 @@ import clsx from 'clsx';
 
 interface IFieldPropsType extends React.ComponentProps<typeof HeadlessField> {
   disabled?: boolean;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 const Field: React.FC<IFieldPropsType> = ({

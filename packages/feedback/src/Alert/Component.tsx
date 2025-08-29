@@ -15,6 +15,7 @@ export const useAlertContext = () => {
   if (!context) {
     throw new Error('Alert components must be used within an Alert');
   }
+
   return context;
 };
 

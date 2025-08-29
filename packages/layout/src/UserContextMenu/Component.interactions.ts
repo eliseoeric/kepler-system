@@ -1,6 +1,10 @@
 import { expect, userEvent, within } from '@storybook/test';
 
-export const openAndCloseMenu = async (canvasElement: HTMLElement) => {
+export const openAndCloseMenu = async ({
+  canvasElement,
+}: {
+  canvasElement: HTMLElement;
+}) => {
   const canvas = within(canvasElement);
 
   // Find and click the dropdown button
@@ -24,7 +28,11 @@ export const openAndCloseMenu = async (canvasElement: HTMLElement) => {
   expect(menuItems).toHaveLength(0);
 };
 
-export const navigateMenuWithKeyboard = async (canvasElement: HTMLElement) => {
+export const navigateMenuWithKeyboard = async ({
+  canvasElement,
+}: {
+  canvasElement: HTMLElement;
+}) => {
   const canvas = within(canvasElement);
 
   // Focus the dropdown button
@@ -56,7 +64,11 @@ export const navigateMenuWithKeyboard = async (canvasElement: HTMLElement) => {
   expect(menuItems).toHaveLength(0);
 };
 
-export const clickMenuItems = async (canvasElement: HTMLElement) => {
+export const clickMenuItems = async ({
+  canvasElement,
+}: {
+  canvasElement: HTMLElement;
+}) => {
   const canvas = within(canvasElement);
 
   // Open menu
@@ -92,7 +104,11 @@ export const clickMenuItems = async (canvasElement: HTMLElement) => {
   expect(menuItems).toHaveLength(0);
 };
 
-export const verifyAccessibility = async (canvasElement: HTMLElement) => {
+export const verifyAccessibility = async ({
+  canvasElement,
+}: {
+  canvasElement: HTMLElement;
+}) => {
   const canvas = within(canvasElement);
 
   // Check for proper ARIA attributes
@@ -125,7 +141,11 @@ export const verifyAccessibility = async (canvasElement: HTMLElement) => {
   }
 };
 
-export const testResponsiveBehavior = async (canvasElement: HTMLElement) => {
+export const testResponsiveBehavior = async ({
+  canvasElement,
+}: {
+  canvasElement: HTMLElement;
+}) => {
   const canvas = within(canvasElement);
 
   // Test on mobile viewport
@@ -154,7 +174,11 @@ export const testResponsiveBehavior = async (canvasElement: HTMLElement) => {
   window.dispatchEvent(new Event('resize'));
 };
 
-export const testFocusManagement = async (canvasElement: HTMLElement) => {
+export const testFocusManagement = async ({
+  canvasElement,
+}: {
+  canvasElement: HTMLElement;
+}) => {
   const canvas = within(canvasElement);
 
   // Focus the dropdown button

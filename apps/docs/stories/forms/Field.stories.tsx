@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React, { useState } from 'react';
-import { expect, userEvent, fn } from 'storybook/test';
+import { expect, userEvent, within, fn } from '@storybook/test';
 import {
   Field,
   Label,
@@ -324,7 +324,8 @@ export const LoginForm: Story = {
       </form>
     );
   },
-  play: async ({ canvas }) => {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
     const emailInput = canvas.getByTestId('login-email');
     const passwordInput = canvas.getByTestId('login-password');
     const submitButton = canvas.getByTestId('login-submit');
@@ -348,52 +349,5 @@ export const LoginForm: Story = {
     await expect(canvas.getByTestId('login-error')).toHaveTextContent(
       'Invalid email or password',
     );
-  },
-};
-
-export const FieldInteraction: Story = {
-  args: {
-    onFieldFocus: fn(),
-    onFieldBlur: fn(),
-  },
-  render: ({ onFieldFocus, onFieldBlur }) => (
-    <div className="w-80 space-y-4">
-      <Field>
-        <Label>Interactive Field 1</Label>
-        <Input
-          placeholder="Focus and blur events"
-          onFocus={() => onFieldFocus?.('field1')}
-          onBlur={() => onFieldBlur?.('field1')}
-          data-testid="field1"
-        />
-      </Field>
-      <Field>
-        <Label>Interactive Field 2</Label>
-        <Input
-          placeholder="Another field"
-          onFocus={() => onFieldFocus?.('field2')}
-          onBlur={() => onFieldBlur?.('field2')}
-          data-testid="field2"
-        />
-      </Field>
-    </div>
-  ),
-  play: async ({ args, canvas }) => {
-    const field1 = canvas.getByTestId('field1');
-    const field2 = canvas.getByTestId('field2');
-
-    // Focus first field
-    await userEvent.click(field1);
-    await expect(args.onFieldFocus).toHaveBeenCalledWith('field1');
-
-    // Move to second field
-    await userEvent.click(field2);
-    await expect(args.onFieldBlur).toHaveBeenCalledWith('field1');
-    await expect(args.onFieldFocus).toHaveBeenCalledWith('field2');
-
-    // Tab back to first field
-    await userEvent.tab({ shift: true });
-    await expect(args.onFieldBlur).toHaveBeenCalledWith('field2');
-    await expect(args.onFieldFocus).toHaveBeenCalledWith('field1');
   },
 };

@@ -55,33 +55,11 @@ export const Secondary: Story = {
   },
 };
 
-export const Accent: Story = {
-  args: {
-    color: 'accent',
-    children: 'Accent',
-  },
-};
-
-export const Tertiary: Story = {
-  args: {
-    color: 'tertiary',
-    children: 'Tertiary',
-  },
-};
-
 export const Outline: Story = {
   args: {
     color: 'primary',
     outline: true,
     children: 'Outline Button',
-  },
-};
-
-export const Plain: Story = {
-  args: {
-    color: 'primary',
-    plain: true,
-    children: 'Plain Button',
   },
 };
 
@@ -96,14 +74,6 @@ export const AsLink: Story = {
   args: {
     href: '#',
     children: 'Link Button',
-    color: 'primary',
-  },
-};
-
-export const WithCustomClassName: Story = {
-  args: {
-    children: 'Custom Button',
-    className: 'w-full max-w-xs',
     color: 'primary',
   },
 };

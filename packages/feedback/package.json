@@ -20,7 +20,6 @@
   "devDependencies": {
     "@eliseoeric/eslint-config": "workspace:*",
     "@eliseoeric/tokens": "workspace:*",
-    "@eliseoeric/core": "workspace:*",
     "@eliseoeric/typescript-config": "workspace:*",
     "@eliseoeric/tailwind-config": "workspace:*",
     "@tailwindcss/cli": "^4.1.5",
@@ -40,6 +39,7 @@
   "dependencies": {
     "@headlessui/react": "^2.2.2",
     "@headlessui/tailwindcss": "^0.2.2",
+    "@eliseoeric/core": "workspace:*",
     "@heroicons/react": "^2.2.0",
     "clsx": "^2.1.1",
     "react": "^19.1.0",
