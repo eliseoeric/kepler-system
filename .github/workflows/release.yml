@@ -54,7 +54,7 @@ jobs:
           publish: pnpm release
           version: pnpm version-packages
           title: 'Version Packages'
-          commit: 'Version Packages'
+          commit: 'ci: version packages'
           createGithubReleases: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
