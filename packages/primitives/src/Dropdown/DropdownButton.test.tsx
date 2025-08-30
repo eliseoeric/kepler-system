@@ -4,9 +4,12 @@ import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
 import DropdownButton from './DropdownButton';
 
+// Type-safe Menu component to handle React 19 compatibility
+const SafeMenu = Menu as React.ComponentType<React.PropsWithChildren<{}>>;
+
 // Helper component to wrap DropdownButton with required Menu context
 const TestWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-  <Menu>{children}</Menu>
+  <SafeMenu>{children}</SafeMenu>
 );
 
 describe('DropdownButton Component', () => {

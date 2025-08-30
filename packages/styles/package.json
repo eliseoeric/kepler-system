@@ -10,6 +10,8 @@
   ],
   "exports": {
     "./styles.css": "./dist/index.css",
+    "./src/styles.css": "./dist/index.css",
+    "./dist/index.css": "./dist/index.css",
     ".": "./dist/index.css"
   },
   "scripts": {

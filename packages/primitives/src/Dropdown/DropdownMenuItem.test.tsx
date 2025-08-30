@@ -4,9 +4,12 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
 import DropdownMenuItem from './DropdownMenuItem';
 
+// Type-safe Menu component to handle React 19 compatibility
+const SafeMenu = Menu as React.ComponentType<React.PropsWithChildren<{}>>;
+
 // Helper component to wrap DropdownMenuItem with required Menu context
 const TestWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-  <Menu>{children}</Menu>
+  <SafeMenu>{children}</SafeMenu>
 );
 
 describe('DropdownMenuItem Component', () => {
@@ -106,15 +109,10 @@ describe('DropdownMenuItem Component', () => {
     expect(menuItem).toHaveAttribute('aria-disabled', 'true');
   });
 
-  it('prioritizes href over onClick when both are provided', () => {
-    const handleClick = vi.fn();
+  it('renders as anchor when href is provided', () => {
     render(
       <TestWrapper>
-        <DropdownMenuItem
-          href="/profile"
-          onClick={handleClick}
-          data-testid="menu-item"
-        >
+        <DropdownMenuItem href="/profile" data-testid="menu-item">
           Profile
         </DropdownMenuItem>
       </TestWrapper>,

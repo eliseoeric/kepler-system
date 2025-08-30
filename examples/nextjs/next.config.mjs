@@ -12,6 +12,6 @@ const nextConfig = {
     '@eliseoeric/tokens',
     '@eliseoeric/styles',
   ],
-}
+};
 
-module.exports = nextConfig
+export default nextConfig;
