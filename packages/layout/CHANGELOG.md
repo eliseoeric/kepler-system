@@ -1,5 +1,12 @@
 # @eliseoeric/layout
 
+## 0.1.2
+
+### Patch Changes
+
+- Updated dependencies [[`f9dad3d`](https://github.com/eliseoeric/kepler-system/commit/f9dad3de484df83eedae5c78fec7bb3006339363)]:
+  - @eliseoeric/primitives@0.2.0
+
 ## 0.1.1
 
 ### Patch Changes
