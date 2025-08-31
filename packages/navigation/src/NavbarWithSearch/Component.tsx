@@ -11,6 +11,20 @@ import {
 import { MagnifyingGlassIcon } from '@heroicons/react/20/solid';
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
 
+// Type-safe icon components to handle React 19 compatibility
+const SafeMagnifyingGlassIcon = MagnifyingGlassIcon as React.ComponentType<
+  React.SVGProps<SVGSVGElement>
+>;
+const SafeBars3Icon = Bars3Icon as React.ComponentType<
+  React.SVGProps<SVGSVGElement>
+>;
+const SafeXMarkIcon = XMarkIcon as React.ComponentType<
+  React.SVGProps<SVGSVGElement>
+>;
+const SafeBellIcon = BellIcon as React.ComponentType<
+  React.SVGProps<SVGSVGElement>
+>;
+
 const Component = () => {
   return (
     <Disclosure
@@ -68,7 +82,7 @@ const Component = () => {
                 placeholder="Search"
                 className="col-start-1 row-start-1 block w-full rounded-md bg-white py-1.5 pl-10 pr-3 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-brand sm:text-sm/6 dark:bg-white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-brand"
               />
-              <MagnifyingGlassIcon
+              <SafeMagnifyingGlassIcon
                 aria-hidden="true"
                 className="pointer-events-none col-start-1 row-start-1 ml-3 size-5 self-center text-gray-400"
               />
@@ -79,11 +93,11 @@ const Component = () => {
             <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline focus:outline-2 focus:-outline-offset-1 focus:outline-brand dark:hover:bg-white/5 dark:hover:text-white dark:focus:outline-brand">
               <span className="absolute -inset-0.5" />
               <span className="sr-only">Open main menu</span>
-              <Bars3Icon
+              <SafeBars3Icon
                 aria-hidden="true"
                 className="block size-6 group-data-[open]:hidden"
               />
-              <XMarkIcon
+              <SafeXMarkIcon
                 aria-hidden="true"
                 className="hidden size-6 group-data-[open]:block"
               />
@@ -96,7 +110,7 @@ const Component = () => {
             >
               <span className="absolute -inset-1.5" />
               <span className="sr-only">View notifications</span>
-              <BellIcon aria-hidden="true" className="size-6" />
+              <SafeBellIcon aria-hidden="true" className="size-6" />
             </button>
 
             {/* Profile dropdown */}
@@ -115,29 +129,26 @@ const Component = () => {
                 transition
                 className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg outline outline-1 outline-black/5 transition data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in dark:bg-gray-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10"
               >
-                <MenuItem>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:outline-none dark:text-gray-300 dark:data-[focus]:bg-white/5"
-                  >
-                    Your profile
-                  </a>
+                <MenuItem
+                  as="a"
+                  href="#"
+                  className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:outline-none dark:text-gray-300 dark:data-[focus]:bg-white/5"
+                >
+                  Your profile
                 </MenuItem>
-                <MenuItem>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:outline-none dark:text-gray-300 dark:data-[focus]:bg-white/5"
-                  >
-                    Settings
-                  </a>
+                <MenuItem
+                  as="a"
+                  href="#"
+                  className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:outline-none dark:text-gray-300 dark:data-[focus]:bg-white/5"
+                >
+                  Settings
                 </MenuItem>
-                <MenuItem>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:outline-none dark:text-gray-300 dark:data-[focus]:bg-white/5"
-                  >
-                    Sign out
-                  </a>
+                <MenuItem
+                  as="a"
+                  href="#"
+                  className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:outline-none dark:text-gray-300 dark:data-[focus]:bg-white/5"
+                >
+                  Sign out
                 </MenuItem>
               </MenuItems>
             </Menu>
@@ -200,7 +211,7 @@ const Component = () => {
             >
               <span className="absolute -inset-1.5" />
               <span className="sr-only">View notifications</span>
-              <BellIcon aria-hidden="true" className="size-6" />
+              <SafeBellIcon aria-hidden="true" className="size-6" />
             </button>
           </div>
           <div className="mt-3 space-y-1">

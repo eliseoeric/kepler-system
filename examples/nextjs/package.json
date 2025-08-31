@@ -1,0 +1,39 @@
+{
+  "name": "@kepler/example-nextjs",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev --port 3001",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@eliseoeric/actions": "workspace:*",
+    "@eliseoeric/primitives": "workspace:*",
+    "@eliseoeric/forms": "workspace:*",
+    "@eliseoeric/feedback": "workspace:*",
+    "@eliseoeric/layout": "workspace:*",
+    "@eliseoeric/navigation": "workspace:*",
+    "@eliseoeric/typography": "workspace:*",
+    "@eliseoeric/data-display": "workspace:*",
+    "@eliseoeric/tokens": "workspace:*",
+    "@eliseoeric/styles": "workspace:*",
+    "next": "15.5.2",
+    "react": "19.0.0",
+    "react-dom": "19.0.0"
+  },
+  "devDependencies": {
+    "@eliseoeric/eslint-config": "workspace:*",
+    "@eliseoeric/typescript-config": "workspace:*",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9.33.0",
+    "eslint-config-next": "15.5.2",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}

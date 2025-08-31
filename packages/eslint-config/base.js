@@ -102,3 +102,6 @@ export const config = [
     ],
   },
 ];
+
+// Default export for compatibility with old .eslintrc format
+export default config;

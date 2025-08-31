@@ -17,13 +17,17 @@
     "release": "turbo run build --filter=docs^... && changeset publish",
     "preview-storybook": "turbo run preview-storybook",
     "figma:connect": "figma connect publish",
-    "prepare": "husky"
+    "prepare": "husky",
+    "example:nextjs": "pnpm --filter @kepler/example-nextjs dev",
+    "example:vite": "pnpm --filter @kepler/example-vite-react dev",
+    "examples": "concurrently \"pnpm example:nextjs\" \"pnpm example:vite\" \"pnpm --filter docs dev\""
   },
   "devDependencies": {
     "@changesets/changelog-github": "^0.5.1",
     "@changesets/cli": "^2.27.1",
     "@changesets/get-github-info": "^0.6.0",
     "@figma/code-connect": "^1.3.4",
+    "concurrently": "^9.1.0",
     "@types/eslint": "^9.6.1",
     "@types/node": "^22.15.3",
     "husky": "^9.1.7",

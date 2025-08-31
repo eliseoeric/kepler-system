@@ -37,6 +37,10 @@ packages/
 
 apps/
 └── docs/               # Storybook documentation
+
+examples/
+├── nextjs/             # Next.js example application
+└── vite-react/         # Vite + React example application
 ```
 
 ### Design Token System
@@ -47,6 +51,43 @@ Style Dictionary powers a sophisticated token system:
 - **Multi-brand themes**: Atlas and NordFox theme overrides
 - **CSS Custom Properties**: All components consume tokens via CSS variables
 - **Zero hardcoded values**: Enforced via ESLint rules
+
+## Example Applications
+
+Two example applications demonstrate real-world usage of the Kepler Design System:
+
+### 🚀 Next.js Example
+
+Modern SSR application showcasing production-ready patterns with theme switching and multi-package integration.
+
+```bash
+pnpm example:nextjs    # Starts on localhost:3001
+```
+
+### ⚡ Vite + React Example
+
+Single-page application demonstrating fast development workflows and version coexistence foundations.
+
+```bash
+pnpm example:vite      # Starts on localhost:3002
+```
+
+### 📱 Run All Examples
+
+Start both examples plus Storybook documentation simultaneously:
+
+```bash
+pnpm examples          # Starts all applications
+```
+
+Both applications include:
+
+- **Live theme switching** between Atlas and NordFox themes
+- **Component showcases** with real usage patterns
+- **Installation guides** and copy-paste examples
+- **Multi-package integration** from all domain packages
+
+For detailed information, see [`examples/README.md`](./examples/README.md).
 
 ## Quick Start
 
@@ -71,6 +112,11 @@ pnpm dev
 
 # Start Storybook documentation site
 pnpm --filter docs dev
+
+# Start example applications
+pnpm example:nextjs      # Next.js example (localhost:3001)
+pnpm example:vite        # Vite React example (localhost:3002)
+pnpm examples           # All examples + Storybook
 
 # Build all packages
 pnpm build
@@ -101,6 +147,14 @@ pnpm lint
 | ---------------------------------------- | ---------------------------------- |
 | `pnpm --filter docs dev`                 | Start Storybook documentation site |
 | `pnpm --filter @eliseoeric/tokens build` | Build design tokens                |
+
+### Example Applications
+
+| Command               | Description                                    | URL                                     |
+| --------------------- | ---------------------------------------------- | --------------------------------------- |
+| `pnpm example:nextjs` | Next.js example with SSR and theme switching   | [localhost:3001](http://localhost:3001) |
+| `pnpm example:vite`   | Vite + React SPA with version coexistence demo | [localhost:3002](http://localhost:3002) |
+| `pnpm examples`       | Start all examples + Storybook simultaneously  | Multiple ports                          |
 
 ### Testing Strategy
 

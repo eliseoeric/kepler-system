@@ -103,3 +103,38 @@ jobs:
 
       - name: 🧪 Run Storybook interaction tests
         run: pnpm test:storybook
+
+  validate-examples:
+    name: Validate Examples
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: 📦 Setup pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 8
+
+      - name: ⚙️ Set up Node.js 22.x
+        uses: actions/setup-node@v4
+        with:
+          cache: pnpm
+          node-version: 22.x
+
+      - name: 📥 Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: 🏗️ Build workspace dependencies
+        run: pnpm build
+
+      - name: 🧹 Lint examples
+        run: pnpm --filter "@kepler/example-*" lint --fail-fast=false
+        continue-on-error: true
+
+      - name: 🏗️ Build examples
+        run: pnpm --filter "@kepler/example-*" build --fail-fast=false
+        continue-on-error: true
