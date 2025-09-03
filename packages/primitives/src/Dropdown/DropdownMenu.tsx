@@ -1,18 +1,26 @@
-import { MenuItems } from '@headlessui/react';
+import * as Headless from '@headlessui/react';
+import clsx from 'clsx';
 
-interface IDropdownMenuProps extends React.ComponentProps<typeof MenuItems> {
-  children: React.ReactNode;
-}
+type DropdownMenuPropsType = {
+  className?: string;
+} & Omit<Headless.MenuItemsProps, 'as' | 'className'>;
 
-const DropdownMenu = ({ children, ...props }: IDropdownMenuProps) => {
+const DropdownMenu = ({
+  anchor = 'bottom',
+  className,
+  ...props
+}: DropdownMenuPropsType) => {
   return (
-    <MenuItems
+    <Headless.MenuItems
       {...props}
       transition
-      className="w-52 origin-top-right rounded-xl border border-white/5 bg-white/5 p-1 text-sm/6 text-white transition duration-100 ease-out [--anchor-gap:--spacing(1)] focus:outline-none data-closed:scale-95 data-closed:opacity-0"
-    >
-      {children}
-    </MenuItems>
+      anchor={anchor}
+      className={clsx(
+        className,
+        // Updated styles for visibility on light/dark backgrounds
+        'w-52 origin-top-right rounded-xl border border-gray-200 bg-white p-1 text-sm/6 text-gray-900 transition duration-100 ease-out [--anchor-gap:--spacing(1)] focus:outline-none data-closed:scale-95 data-closed:opacity-0 shadow-lg dark:border-gray-700 dark:bg-gray-800 dark:text-white',
+      )}
+    />
   );
 };
 

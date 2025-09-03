@@ -37,6 +37,7 @@
     "typescript": "5.9.2"
   },
   "dependencies": {
+    "@eliseoeric/layout": "workspace:*",
     "@headlessui/react": "^2.2.2",
     "@headlessui/tailwindcss": "^0.2.2",
     "@heroicons/react": "^2.2.0",

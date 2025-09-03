@@ -1,37 +1,47 @@
-import { MenuItem } from '@headlessui/react';
+import React from 'react';
+import * as Headless from '@headlessui/react';
 import clsx from 'clsx';
 
-interface IDropdownMenuItemProps
-  extends Omit<React.ComponentProps<typeof MenuItem>, 'as'> {
-  href?: string;
-  onClick?: () => void;
-  children: React.ReactNode;
-}
+type ButtonItemPropsType = Omit<
+  Headless.MenuItemProps<'button'>,
+  'as' | 'className'
+>;
+// Require href on anchor variant for discrimination
+type AnchorItemPropsType = Omit<
+  Headless.MenuItemProps<'a'>,
+  'as' | 'className'
+> & {
+  href: string;
+};
 
-const DropdownMenuItem = ({
-  href,
-  onClick,
-  children,
+export type DropdownMenuItemPropsType = { className?: string } & (
+  | ButtonItemPropsType
+  | AnchorItemPropsType
+);
+
+const DropdownMenuItem: React.FC<DropdownMenuItemPropsType> = ({
   className,
   ...props
-}: IDropdownMenuItemProps) => {
-  const baseClasses =
-    'group flex w-full items-center rounded-md px-2 py-2 text-sm text-white hover:bg-white/10 focus:bg-white/10 focus:outline-none';
+}) => {
+  const itemClasses = clsx(
+    className,
+    // Base styles
+    'group flex w-full items-center rounded-md px-2 py-2 text-sm text-gray-900 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none dark:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700',
+  );
 
-  const itemClasses = clsx(baseClasses, className);
-
-  if (href) {
-    return (
-      <MenuItem as="a" href={href} className={itemClasses} {...props}>
-        {children}
-      </MenuItem>
-    );
-  }
-
-  return (
-    <MenuItem as="button" onClick={onClick} className={itemClasses} {...props}>
-      {children}
-    </MenuItem>
+  return 'href' in props ? (
+    <Headless.MenuItem
+      as="a"
+      {...(props as AnchorItemPropsType)}
+      className={itemClasses}
+    />
+  ) : (
+    <Headless.MenuItem
+      as="button"
+      type="button"
+      {...(props as ButtonItemPropsType)}
+      className={itemClasses}
+    />
   );
 };
 

@@ -1,11 +1,11 @@
 import React from 'react';
-import { MenuButton } from '@headlessui/react';
+import * as Headless from '@headlessui/react';
 import clsx from 'clsx';
 
 type ColorSelectionType = 'primary' | 'secondary' | 'accent' | 'tertiary';
 
 interface IDropdownButtonProps
-  extends Omit<React.ComponentProps<typeof MenuButton>, 'children'> {
+  extends Omit<React.ComponentProps<typeof Headless.MenuButton>, 'children'> {
   color?: ColorSelectionType;
   outline?: boolean;
   plain?: boolean;
@@ -99,9 +99,13 @@ const DropdownButton: React.FC<IDropdownButtonProps> = ({
   );
 
   return (
-    <MenuButton disabled={disabled} className={buttonClasses} {...props}>
+    <Headless.MenuButton
+      disabled={disabled}
+      className={buttonClasses}
+      {...props}
+    >
       {children}
-    </MenuButton>
+    </Headless.MenuButton>
   );
 };
 

@@ -9,3 +9,4 @@
 @source "../../feedback/src";
 @source "../../navigation/src";
 @source "../../primitives/src";
+@source inline("bg-{primary,secondary,accent,tertiary}/{10..100..10}");

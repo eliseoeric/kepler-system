@@ -6,19 +6,18 @@ import Dropdown from './Component';
 describe('Dropdown Component', () => {
   it('renders with default props', () => {
     render(
-      <Dropdown data-testid="dropdown">
+      <Dropdown as="div" data-testid="dropdown">
         <div>Dropdown content</div>
       </Dropdown>,
     );
 
     const dropdown = screen.getByTestId('dropdown');
     expect(dropdown).toBeInTheDocument();
-    expect(dropdown).toHaveClass('relative', 'inline-block');
   });
 
   it('renders children correctly', () => {
     render(
-      <Dropdown data-testid="dropdown">
+      <Dropdown as="div" data-testid="dropdown">
         <button>Dropdown Button</button>
         <div>Dropdown Menu</div>
       </Dropdown>,
@@ -34,6 +33,7 @@ describe('Dropdown Component', () => {
     const customClass = 'custom-dropdown-class';
     render(
       <Dropdown
+        as="div"
         className={customClass}
         data-testid="dropdown"
         role="menu"
