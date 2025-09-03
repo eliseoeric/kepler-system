@@ -35,3 +35,17 @@ export const Default: Story = {
     initials: 'AB',
   },
 };
+
+export const WithImage: Story = {
+  args: {
+    src: 'https://i.pravatar.cc/64?img=12',
+    alt: 'User Avatar',
+  },
+};
+
+export const AsLink: Story = {
+  args: {
+    initials: 'JD',
+    href: '#',
+  },
+};

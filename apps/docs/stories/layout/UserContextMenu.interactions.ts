@@ -1,4 +1,4 @@
-import { expect, userEvent, within } from '@storybook/test';
+import { expect, userEvent, within, screen } from '@storybook/test';
 
 export const openAndCloseMenu = async ({
   canvasElement,
@@ -10,16 +10,22 @@ export const openAndCloseMenu = async ({
   const dropdownButton = canvas.getByRole('button');
   await userEvent.click(dropdownButton);
 
-  const profileLink = await canvas.findByText('Your profile');
-  const settingsLink = await canvas.findByText('Settings');
-  const signOutLink = await canvas.findByText('Sign out');
+  // Menu items are in a portal, so search the entire document
+  const profileLink = await screen.findByText('Your profile');
+  const settingsLink = await screen.findByText('Settings');
+  const signOutLink = await screen.findByText('Sign out');
 
   expect(profileLink).toBeInTheDocument();
   expect(settingsLink).toBeInTheDocument();
   expect(signOutLink).toBeInTheDocument();
 
-  await userEvent.click(canvasElement);
+  // Click on document body to close the menu
+  await userEvent.click(document.body);
 
-  const menuItems = canvas.queryAllByRole('menuitem');
+  // Wait a bit for the menu to close with transition
+  await new Promise((resolve) => setTimeout(resolve, 200));
+
+  // Check that menu items are closed by looking in the entire document
+  const menuItems = screen.queryAllByRole('menuitem');
   expect(menuItems).toHaveLength(0);
 };

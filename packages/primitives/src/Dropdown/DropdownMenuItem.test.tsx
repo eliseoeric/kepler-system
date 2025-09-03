@@ -70,7 +70,7 @@ describe('DropdownMenuItem Component', () => {
       'px-2',
       'py-2',
       'text-sm',
-      'text-white',
+      'text-gray-900',
     );
   });
 

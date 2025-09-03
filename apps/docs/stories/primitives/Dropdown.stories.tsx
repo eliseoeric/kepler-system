@@ -32,6 +32,7 @@ export const Default: Story = {
       <DropdownMenu anchor="bottom end">
         <DropdownMenuItem onClick={() => {}}>Profile</DropdownMenuItem>
         <DropdownMenuItem href="#">Settings</DropdownMenuItem>
+        <DropdownMenuItem href="#">Logout</DropdownMenuItem>
       </DropdownMenu>
     </Dropdown>
   ),
