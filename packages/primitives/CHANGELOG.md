@@ -1,5 +1,13 @@
 # @eliseoeric/primitives
 
+## 0.3.0
+
+### Minor Changes
+
+- [`c6b074d`](https://github.com/eliseoeric/kepler-system/commit/c6b074d660a572c372e09a8be7771db414f50977) Thanks [@github-actions[bot]](https://github.com/github-actions%5Bbot%5D)! - update UserContextMenu and Dropdown components
+
+  <!-- Auto-generated from commit 8a46d72a3a39cd28339b8b99f0eb85a6fd54e2f0 -->
+
 ## 0.2.0
 
 ### Minor Changes
